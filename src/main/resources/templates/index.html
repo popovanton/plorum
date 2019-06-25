@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники компании</title>
+</head>
+<body>
+<h1>Сотрудники компании</h1>
+<table>
+    <th:block th:each="employee : ${employees}">
+    <thead>
+    <tr>
+        <td>Фамилия</td>
+        <td>Имя</td>
+        <td>Отчество</td>
+        <td>Должность</td>
+        <td>Телефон</td>
+        <td>Почта</td>
+    </tr>
+    </thead>
+    <tbody>
+    <td th:text="${employee.surname}"></td>
+    <td th:text="${employee.name}"></td>
+    <td th:text="${employee.patronymic}"></td>
+    <td th:text="${employee.position}"></td>
+    <td th:text="${employee.phonenumber}"></td>
+    <td th:text="${employee.email}"></td>
+    </tbody>
+    </th:block>
+</table>
+<br><form action="/sort">
+    <input type="submit" value="Sort" />
+</form>
+<form action="/store">
+    <input type="submit" value="Store data in .txt" />
+</form>
+
+</body>
+</html>
